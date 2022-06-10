@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
+    //adding some routing annotaions
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
