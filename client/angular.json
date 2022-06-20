@@ -26,9 +26,12 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [ 
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+            "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootswatch/dist/united/bootstrap.css",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -109,8 +112,7 @@
       }
     }
   },
-  "defaultProject": "client",
   "cli": {
-    "analytics": false
+    "analytics": "05f2fb4c-2cdb-412f-8677-2076c5e67a49"
   }
 }
