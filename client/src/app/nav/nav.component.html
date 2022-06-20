@@ -1,22 +1,23 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
                  <div class="container">
-                                  <a class="navbar-brand" routerLink="/">Dating App</a>
-
-                                  <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="accountService.currentUser$ | async">
-                                                   <li class="nav-item">
-                                                                    <a class="nav-link " routerLink="/members">Matches</a>
-                                                   </li>
-                                                   <li class="nav-item">
-                                                                    <a class="nav-link" href="/lists">Lists</a>
-                                                   </li>
-                                                   <li class="nav-item">
-                                                                    <a class="nav-link "href="/messages"  >Messages</a>
-                                                   </li>
+                                  <a class="navbar-brand" routerLink="/">Dating App</a> 
+                                  <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                                                   <ng-container *ngIf="accountService.currentUser$ | async" >
+                                                                    <li class="nav-item">
+                                                                                     <a class="nav-link " routerLink="/members">Matches</a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                                     <a class="nav-link" href="/lists">Lists</a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                                     <a class="nav-link "href="/messages"  >Messages</a>
+                                                                    </li>
+                                                   </ng-container>
                                   </ul>
 
 
-                                  <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown [autoClose]="false">
-                                                   <a dropdownToggle class="dropdown-toggle text-light">Welcome user</a>
+                                  <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown [autoClose]="false">
+                                                   <a dropdownToggle class="dropdown-toggle text-light" style="text-decoration: none;">Welcome {{user.username}}</a>
                                                    <div class="dropdown-menu" *dropdownMenu>
                                                                     <a class="dropdown-item">Edit Profile</a>
                                                                     <div class="dropdown-divider"></div>
@@ -39,7 +40,7 @@
                                                    type="password" 
                                                    placeholder="Password" >
                                                    <button
-                                                    class="btn btn-outline-success" 
+                                                    class="btn btn-success" 
                                                     type="submit">Login</button>
                                   </form>
                               

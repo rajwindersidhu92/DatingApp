@@ -11,11 +11,11 @@ import { User } from '../_models/user';
 export class AccountService {
   baseUrl ='https://localhost:5001/api/';
 
-  private currentUserSource  = new ReplaySubject<User | null>(1);
+  private currentUserSource  = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
- 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+   }
 
   login(model: any) {
     return this.http.post(this.baseUrl + 'account/login', model).pipe(
@@ -31,7 +31,7 @@ export class AccountService {
 
   register(model:any){
     return this.http.post(this.baseUrl +'account/register', model).pipe(
-        map((response: any) => {
+        map((response: User) => {
           const user = response;
           if (user) {
             localStorage.setItem('user', JSON.stringify(user));
