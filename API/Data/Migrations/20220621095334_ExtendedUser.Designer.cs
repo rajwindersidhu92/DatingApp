@@ -16,7 +16,6 @@ namespace API.Data.Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
 
             modelBuilder.Entity("API.Entities.AppUser", b =>
@@ -109,7 +108,6 @@ namespace API.Data.Migrations
                 {
                     b.Navigation("Photos");
                 });
-#pragma warning restore 612, 618
         }
     }
 }

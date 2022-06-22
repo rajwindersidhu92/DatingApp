@@ -31,7 +31,6 @@ namespace API.Data.Migrations
 
                     b.ToTable("Users");
                 });
-#pragma warning restore 612, 618
         }
     }
 }
