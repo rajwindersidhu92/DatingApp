@@ -18,4 +18,7 @@ namespace API.Helpers
             CreateMap<Photo, PhotoDto>();
         }
     }
+
+
+
 } 
